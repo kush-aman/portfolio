@@ -1,0 +1,148 @@
+:root {
+  --bg: #f4f7fb;
+  --surface: #ffffff;
+  --text: #0b1f3a;
+  --muted: #4a5d78;
+  --accent: #1a4b8c;
+  --accent-hover: #c9a227;
+  --gold: #c9a227;
+  --gold-soft: #e8d48b;
+  --border: #d7e0ec;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+}
+#weather {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+#cityInput {
+  padding: 10px;
+  width: 65%;
+}
+
+#weatherButton {
+  padding: 10px 16px;
+  cursor: pointer;
+}
+
+#weatherResult {
+  margin-top: 20px;
+}
+.site-header,
+main,
+.site-footer {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.site-header {
+  padding-top: 3.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid var(--gold);
+}
+
+h1 {
+  margin: 0 0 0.4rem;
+  font-size: 2.4rem;
+  letter-spacing: 0.02em;
+  color: var(--accent);
+}
+
+.tagline {
+  margin: 0;
+  color: var(--muted);
+  font-style: italic;
+}
+
+main {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--gold);
+  border-radius: 0.75rem;
+  padding: 1.25rem 1.4rem;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 8px 24px rgba(11, 31, 58, 0.06);
+}
+
+h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.25rem;
+  color: var(--accent);
+  border-bottom: 1px solid var(--gold-soft);
+  padding-bottom: 0.35rem;
+}
+
+p,
+ul {
+  margin: 0;
+}
+
+ul {
+  padding-left: 1.2rem;
+}
+
+li + li {
+  margin-top: 0.45rem;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  display: inline-block;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--accent-hover);
+  text-decoration: underline;
+  transform: scale(1.02);
+}
+
+.site-footer {
+  padding-top: 1rem;
+  padding-bottom: 2.5rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  border-top: 1px solid var(--gold-soft);
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.9rem;
+  }
+
+  .site-header {
+    padding-top: 2.25rem;
+  }
+}
+#themeToggle{
+  border-radius: 5px;
+  background-color: #3eda92;
+}
+.dark-mode {
+  background-color: #222;
+  color: white;
+}
+

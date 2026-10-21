@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PLACEHOLDER Your Name | Personal Profile</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="chatbot.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <h1>AMAN KUSHWAHA</h1>
+      <p class="tagline">I am 2nd year Btech CSE student</p>
+    </header>
+
+    <main>
+      <section class="about" aria-labelledby="about-heading">
+        <h2 id="about-heading">About</h2>
+        <p>
+          I am a 2nd year Btech CSE student at the University. I am a passionate about web development and machine learning. I am currently learning web development and machine learning. I am also interested in cloud computing and cybersecurity. I am a quick learner and I am always looking for new challenges.
+        </p>
+      </section>
+
+      <section class="skills" aria-labelledby="skills-heading">
+        <h2 id="skills-heading">Skills</h2>
+        <ul>
+          <li>C++</li>
+          <li> OPPs</li>
+          <li>Web Dev</li>
+          <li>Problem </li>
+        </ul>
+      </section>
+
+      <section class="projects" aria-labelledby="projects-heading">
+        <h2 id="projects-heading">Projects</h2>
+        <ul>
+          <li>
+            <a href="https://github/myntra-clone">
+              Myntra Clone
+            </a>
+            Myntra website clone
+          </li>
+      </section>
+    </main>
+    <section id="weather">
+      <h2>Weather</h2>
+  
+      <input
+          type="text"
+          id="cityInput"
+          placeholder="Enter a city"
+      >
+  
+      <button id="weatherButton">
+          Get Weather
+      </button>
+      
+      <div id="weatherResult">
+          Enter a city to see the weather.
+      </div>
+      <section id="aiChatSection" class="ai-chat">
+        <h2>Ask My AI Assistant</h2>
+      
+        <p>
+          Ask questions about this portfolio,
+          projects, and technologies.
+        </p>
+      
+        <div
+          id="chatMessages"
+          aria-live="polite"
+        ></div>
+      
+        <div class="chat-controls">
+          <input
+            type="text"
+            id="userInput"
+            placeholder="Ask a question..."
+          />
+      
+          <button id="sendButton" type="button">
+            Send
+          </button>
+        </div>
+      
+        <p id="chatStatus" role="status"></p>
+      
+        <p class="chat-note">
+          AI chat is available during the local
+          classroom demonstration only.
+        </p>
+      </section>
+  </section>
+    <footer class="site-footer">
+      <button id = "themeToggle">Change Theme</button>
+      <p>Email - aman.25bcon1981@jecrcu.edu.in</p>
+    </footer>
+    <script src = "script.js"></script>
+    <script src="config.js"></script>
+    <script src="chatbot.js"></script>
+  </body>
+</html>
