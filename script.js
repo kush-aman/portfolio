@@ -1,25 +1,70 @@
 console.log("JavaScript connected");
 
-// ===== DARK / LIGHT MODE TOGGLE =====
+// ===== DARK / LIGHT MODE FEATURE =====
 const themeButton = document.getElementById("themeToggle");
+const footerThemeToggle = document.getElementById("footerThemeToggle");
 
-// Load saved theme preference
-if (localStorage.getItem("theme") === "dark") {
-  document.body.classList.add("dark-mode");
-  themeButton.innerHTML = '<i class="fas fa-sun"></i>';
+function applyTheme(theme) {
+  const isDark = theme === "dark";
+  document.body.classList.toggle("dark-mode", isDark);
+  try {
+    localStorage.setItem("theme", theme);
+  } catch (e) {
+    console.warn("localStorage not available:", e);
+  }
+
+  // Update navbar theme button
+  if (themeButton) {
+    const icon = themeButton.querySelector(".theme-toggle-icon");
+    const label = themeButton.querySelector(".theme-toggle-text");
+    if (icon) {
+      icon.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+    }
+    if (label) {
+      label.textContent = isDark ? "Light Mode" : "Dark Mode";
+    }
+    themeButton.setAttribute("aria-label", isDark ? "Switch to Light Mode" : "Switch to Dark Mode");
+    themeButton.setAttribute("title", isDark ? "Switch to Light Mode" : "Switch to Dark Mode");
+  }
+
+  // Update footer theme button
+  if (footerThemeToggle) {
+    footerThemeToggle.innerHTML = isDark
+      ? '<i class="fas fa-sun"></i> Switch to Light Mode'
+      : '<i class="fas fa-moon"></i> Switch to Dark Mode';
+    footerThemeToggle.setAttribute("aria-label", isDark ? "Switch to Light Mode" : "Switch to Dark Mode");
+  }
 }
 
-themeButton.addEventListener("click", function () {
-  document.body.classList.toggle("dark-mode");
+function toggleTheme() {
+  const isCurrentlyDark = document.body.classList.contains("dark-mode");
+  applyTheme(isCurrentlyDark ? "light" : "dark");
+}
 
-  if (document.body.classList.contains("dark-mode")) {
-    themeButton.innerHTML = '<i class="fas fa-sun"></i>';
-    localStorage.setItem("theme", "dark");
-  } else {
-    themeButton.innerHTML = '<i class="fas fa-moon"></i>';
-    localStorage.setItem("theme", "light");
+// Check saved preference or system preference on load
+(function initTheme() {
+  let savedTheme = null;
+  try {
+    savedTheme = localStorage.getItem("theme");
+  } catch (e) {
+    console.warn("localStorage error:", e);
   }
-});
+
+  if (savedTheme === "dark" || savedTheme === "light") {
+    applyTheme(savedTheme);
+  } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    applyTheme("dark");
+  } else {
+    applyTheme("light");
+  }
+
+  if (themeButton) {
+    themeButton.addEventListener("click", toggleTheme);
+  }
+  if (footerThemeToggle) {
+    footerThemeToggle.addEventListener("click", toggleTheme);
+  }
+})();
 
 // ===== MOBILE NAVIGATION TOGGLE =====
 const navToggle = document.getElementById("navToggle");

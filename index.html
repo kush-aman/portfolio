@@ -14,10 +14,8 @@
   <body>
     <!-- ========== NAVIGATION ========== -->
     <nav class="navbar" id="navbar">
-      <div class="nav-brand">AK</div>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-        <i class="fas fa-bars"></i>
-      </button>
+      <a href="#home" class="nav-brand">AK</a>
+      
       <ul class="nav-links" id="navLinks">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About Me</a></li>
@@ -25,12 +23,17 @@
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
         <li><a href="#chatbot">AI Chatbot</a></li>
-        <li>
-          <button id="themeToggle" class="theme-btn" aria-label="Toggle theme">
-            <i class="fas fa-moon"></i>
-          </button>
-        </li>
       </ul>
+
+      <div class="nav-actions">
+        <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle dark/light mode" title="Switch Theme">
+          <span class="theme-toggle-icon"><i class="fas fa-moon"></i></span>
+          <span class="theme-toggle-text">Dark Mode</span>
+        </button>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
     </nav>
 
     <!-- ========== HOME ========== -->
@@ -394,6 +397,11 @@
 
     <!-- ========== FOOTER ========== -->
     <footer class="site-footer">
+      <div class="footer-theme-wrap">
+        <button id="footerThemeToggle" class="footer-theme-btn" type="button" aria-label="Toggle theme">
+          <i class="fas fa-moon"></i> Switch to Dark Mode
+        </button>
+      </div>
       <p>
         &copy; 2026 Aman Kushwaha. Built with
         <i class="fas fa-heart" style="color: #e74c3c"></i> using HTML, CSS &amp;

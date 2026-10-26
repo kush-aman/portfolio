@@ -15,25 +15,31 @@
   --tag-text: #1a4b8c;
   --input-bg: #ffffff;
   --hero-gradient: linear-gradient(135deg, #1a4b8c 0%, #2d6bc4 100%);
+  --toggle-bg: #e2e8f0;
+  --toggle-text: #0b1f3a;
+  --toggle-border: #cbd5e1;
 }
 
 /* ===== DARK THEME ===== */
 body.dark-mode {
-  --bg: #0f172a;
+  --bg: #0b1120;
   --surface: #1e293b;
-  --text: #e2e8f0;
+  --text: #f1f5f9;
   --muted: #94a3b8;
-  --accent: #60a5fa;
-  --accent-hover: #f59e0b;
-  --gold: #f59e0b;
-  --gold-soft: #92661a;
+  --accent: #38bdf8;
+  --accent-hover: #fbbf24;
+  --gold: #fbbf24;
+  --gold-soft: #78350f;
   --border: #334155;
-  --card-shadow: rgba(0, 0, 0, 0.3);
-  --nav-bg: rgba(15, 23, 42, 0.95);
+  --card-shadow: rgba(0, 0, 0, 0.45);
+  --nav-bg: rgba(11, 17, 32, 0.95);
   --tag-bg: #1e3a5f;
-  --tag-text: #93c5fd;
+  --tag-text: #7dd3fc;
   --input-bg: #1e293b;
-  --hero-gradient: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%);
+  --hero-gradient: linear-gradient(135deg, #090e1a 0%, #1e3a5f 100%);
+  --toggle-bg: #1e293b;
+  --toggle-text: #fbbf24;
+  --toggle-border: #475569;
 }
 
 /* ===== RESET & BASE ===== */
@@ -55,7 +61,23 @@ body {
   line-height: 1.7;
   color: var(--text);
   background: var(--bg);
-  transition: background 0.3s ease, color 0.3s ease;
+}
+
+body,
+.navbar,
+section,
+.project-card,
+.skill-card,
+.contact-item,
+.site-footer,
+#projectSearch,
+#userInput,
+#chatMessages,
+.theme-toggle-btn,
+.footer-theme-btn,
+.btn,
+.tag {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* ===== NAVBAR ===== */
@@ -81,6 +103,7 @@ body {
   font-weight: 800;
   color: var(--accent);
   letter-spacing: 0.05em;
+  text-decoration: none;
 }
 
 .nav-links {
@@ -106,25 +129,65 @@ body {
   color: var(--accent);
 }
 
-.theme-btn {
-  background: none;
-  border: 2px solid var(--border);
-  color: var(--text);
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  cursor: pointer;
+.nav-actions {
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: 1rem;
-  transition: all 0.3s;
+  gap: 0.75rem;
 }
 
-.theme-btn:hover {
+.theme-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: var(--toggle-bg);
+  color: var(--toggle-text);
+  border: 1px solid var(--toggle-border);
+  border-radius: 2rem;
+  padding: 0.38rem 0.85rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+}
+
+.theme-toggle-btn:hover {
   border-color: var(--gold);
   color: var(--gold);
-  transform: rotate(20deg);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px var(--card-shadow);
+}
+
+.theme-toggle-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  color: var(--gold);
+}
+
+.footer-theme-wrap {
+  margin-bottom: 1.25rem;
+}
+
+.footer-theme-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--toggle-bg);
+  color: var(--toggle-text);
+  border: 1px solid var(--toggle-border);
+  border-radius: 2rem;
+  padding: 0.55rem 1.35rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.footer-theme-btn:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px var(--card-shadow);
 }
 
 .nav-toggle {
@@ -530,10 +593,57 @@ p {
   transform: scale(1.2);
 }
 
+/* ===== DARK MODE OVERRIDES & ENHANCEMENTS ===== */
+body.dark-mode .btn-sm {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+body.dark-mode .btn-sm:hover {
+  background: #1d4ed8;
+}
+
+body.dark-mode .btn-live {
+  background: #16a34a;
+  color: #ffffff;
+}
+
+body.dark-mode .btn-live:hover {
+  background: #15803d;
+}
+
+body.dark-mode .chat-user {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+body.dark-mode #sendButton {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+body.dark-mode #sendButton:hover {
+  background: #1d4ed8;
+}
+
+body.dark-mode #projectSearch::placeholder,
+body.dark-mode #userInput::placeholder {
+  color: #64748b;
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .nav-toggle {
     display: block;
+  }
+
+  .theme-toggle-text {
+    display: none;
+  }
+
+  .theme-toggle-btn {
+    padding: 0.38rem 0.65rem;
+    font-size: 0.95rem;
   }
 
   .nav-links {
