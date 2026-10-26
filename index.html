@@ -3,99 +3,416 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PLACEHOLDER Your Name | Personal Profile</title>
+    <title>Aman Kushwaha | Personal Portfolio</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="chatbot.css">
+    <link rel="stylesheet" href="chatbot.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
   </head>
   <body>
-    <header class="site-header">
-      <h1>AMAN KUSHWAHA</h1>
-      <p class="tagline">I am 2nd year Btech CSE student</p>
+    <!-- ========== NAVIGATION ========== -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-brand">AK</div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#chatbot">AI Chatbot</a></li>
+        <li>
+          <button id="themeToggle" class="theme-btn" aria-label="Toggle theme">
+            <i class="fas fa-moon"></i>
+          </button>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- ========== HOME ========== -->
+    <header class="hero" id="home">
+      <div class="hero-content">
+        <div class="hero-text">
+          <p class="hero-greeting">Hello, I'm</p>
+          <h1>Aman Kushwaha</h1>
+          <p class="hero-tagline">
+            2nd Year B.Tech CSE Student | Web Developer | Tech Enthusiast
+          </p>
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary">View Projects</a>
+            <a
+              href="https://github.com/kush-aman"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-outline"
+              ><i class="fab fa-github"></i> GitHub Profile</a
+            >
+          </div>
+        </div>
+        <div class="hero-image">
+          <img
+            src="https://api.dicebear.com/7.x/initials/svg?seed=AK&backgroundColor=1a4b8c&textColor=ffffff&fontSize=42"
+            alt="Aman Kushwaha avatar"
+            class="profile-img"
+          />
+        </div>
+      </div>
     </header>
 
     <main>
-      <section class="about" aria-labelledby="about-heading">
-        <h2 id="about-heading">About</h2>
+      <!-- ========== ABOUT ME ========== -->
+      <section class="about" id="about" aria-labelledby="about-heading">
+        <h2 id="about-heading"><i class="fas fa-user"></i> About Me</h2>
         <p>
-          I am a 2nd year Btech CSE student at the University. I am a passionate about web development and machine learning. I am currently learning web development and machine learning. I am also interested in cloud computing and cybersecurity. I am a quick learner and I am always looking for new challenges.
+          I am <strong>Aman Kushwaha</strong>, a 2nd year B.Tech Computer
+          Science and Engineering student at JEC, RCU. I am passionate about web
+          development and machine learning. I enjoy building interactive web
+          applications and solving complex programming challenges. I am also
+          interested in cloud computing and cybersecurity. I am a quick learner
+          who is always eager to explore new technologies and take on fresh
+          challenges.
         </p>
       </section>
 
-      <section class="skills" aria-labelledby="skills-heading">
-        <h2 id="skills-heading">Skills</h2>
-        <ul>
-          <li>C++</li>
-          <li> OPPs</li>
-          <li>Web Dev</li>
-          <li>Problem </li>
-        </ul>
+      <!-- ========== SKILLS ========== -->
+      <section class="skills" id="skills" aria-labelledby="skills-heading">
+        <h2 id="skills-heading"><i class="fas fa-code"></i> Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <i class="fab fa-python"></i>
+            <span>Python</span>
+          </div>
+          <div class="skill-card">
+            <i class="fas fa-copyright"></i>
+            <span>C++</span>
+          </div>
+          <div class="skill-card">
+            <i class="fab fa-html5"></i>
+            <span>HTML5</span>
+          </div>
+          <div class="skill-card">
+            <i class="fab fa-css3-alt"></i>
+            <span>CSS3</span>
+          </div>
+          <div class="skill-card">
+            <i class="fab fa-js-square"></i>
+            <span>JavaScript</span>
+          </div>
+          <div class="skill-card">
+            <i class="fab fa-git-alt"></i>
+            <span>Git &amp; GitHub</span>
+          </div>
+          <div class="skill-card">
+            <i class="fas fa-brain"></i>
+            <span>OOPs</span>
+          </div>
+          <div class="skill-card">
+            <i class="fas fa-puzzle-piece"></i>
+            <span>Problem Solving</span>
+          </div>
+          <div class="skill-card">
+            <i class="fas fa-robot"></i>
+            <span>AI / ML Basics</span>
+          </div>
+        </div>
       </section>
 
-      <section class="projects" aria-labelledby="projects-heading">
-        <h2 id="projects-heading">Projects</h2>
-        <ul>
-          <li>
-            <a href="https://github/myntra-clone">
-              Myntra Clone
-            </a>
-            Myntra website clone
-          </li>
-      </section>
-    </main>
-    <section id="weather">
-      <h2>Weather</h2>
-  
-      <input
-          type="text"
-          id="cityInput"
-          placeholder="Enter a city"
+      <!-- ========== PROJECTS ========== -->
+      <section
+        class="projects"
+        id="projects"
+        aria-labelledby="projects-heading"
       >
-  
-      <button id="weatherButton">
-          Get Weather
-      </button>
-      
-      <div id="weatherResult">
-          Enter a city to see the weather.
-      </div>
-      <section id="aiChatSection" class="ai-chat">
-        <h2>Ask My AI Assistant</h2>
-      
-        <p>
-          Ask questions about this portfolio,
-          projects, and technologies.
+        <h2 id="projects-heading"><i class="fas fa-folder-open"></i> My Projects</h2>
+
+        <!-- Search / Filter -->
+        <div class="search-bar">
+          <i class="fas fa-search search-icon"></i>
+          <input
+            type="text"
+            id="projectSearch"
+            placeholder="Search projects by name or technology (e.g. Python, Quiz, Book)..."
+          />
+        </div>
+
+        <div class="projects-grid" id="projectsGrid">
+          <!-- Card 1 -->
+          <div
+            class="project-card"
+            data-title="Python Programs Collection"
+            data-tech="python fibonacci factorial dictionary"
+          >
+            <div class="card-header">
+              <i class="fab fa-python card-icon"></i>
+              <h3>Python Programs Collection</h3>
+            </div>
+            <p>
+              A collection of fundamental Python programs including Factorial
+              computation, Fibonacci sequence generation, and
+              Structure-to-Dictionary conversion. Repository includes an
+              updated README with detailed documentation.
+            </p>
+            <div class="card-tags">
+              <span class="tag">Python</span>
+              <span class="tag">Algorithms</span>
+              <span class="tag">Data Structures</span>
+            </div>
+            <div class="card-links">
+              <a
+                href="https://github.com/kush-aman/python-basics-1981"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-sm"
+                ><i class="fab fa-github"></i> GitHub Repo</a
+              >
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="project-card"
+            data-title="Messy Python Code Improvement"
+            data-tech="python ai refactoring clean code"
+          >
+            <div class="card-header">
+              <i class="fas fa-broom card-icon"></i>
+              <h3>Messy Python Code Improvement</h3>
+            </div>
+            <p>
+              Took a messy, poorly structured Python script and improved it
+              using AI assistance. Applied clean code principles including
+              proper naming conventions, modularization, and documentation.
+            </p>
+            <div class="card-tags">
+              <span class="tag">Python</span>
+              <span class="tag">AI Assistance</span>
+              <span class="tag">Refactoring</span>
+            </div>
+            <div class="card-links">
+              <a
+                href="https://github.com/kush-aman/messy-python-code"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-sm"
+                ><i class="fab fa-github"></i> GitHub Repo</a
+              >
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="project-card"
+            data-title="Bug Fixing Using Cursor AI"
+            data-tech="python cursor ai debugging bug fixing"
+          >
+            <div class="card-header">
+              <i class="fas fa-bug card-icon"></i>
+              <h3>Bug Fixing Using Cursor AI</h3>
+            </div>
+            <p>
+              Identified an incorrect/buggy program and corrected it using
+              Cursor AI. Demonstrated effective use of AI-powered tools for
+              debugging, error detection, and code correction.
+            </p>
+            <div class="card-tags">
+              <span class="tag">Python</span>
+              <span class="tag">Cursor AI</span>
+              <span class="tag">Debugging</span>
+            </div>
+            <div class="card-links">
+              <a
+                href="https://github.com/kush-aman/bug-fixiing-using-cursor-ai"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-sm"
+                ><i class="fab fa-github"></i> GitHub Repo</a
+              >
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div
+            class="project-card"
+            data-title="Interactive Quiz Application"
+            data-tech="html css javascript quiz web application"
+          >
+            <div class="card-header">
+              <i class="fas fa-question-circle card-icon"></i>
+              <h3>Interactive Quiz Application</h3>
+            </div>
+            <p>
+              A dynamic quiz application built with HTML, CSS, and JavaScript.
+              Features timed questions, score tracking, multiple-choice
+              answers, and an interactive user interface developed in Lecture
+              10.
+            </p>
+            <div class="card-tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+            </div>
+            <div class="card-links">
+              <a
+                href="https://github.com/kush-aman/quiz"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-sm"
+                ><i class="fab fa-github"></i> GitHub Repo</a
+              >
+              <a
+                href="https://quiz-dusky-ten-31.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-sm btn-live"
+                ><i class="fas fa-external-link-alt"></i> Live Demo</a
+              >
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div
+            class="project-card"
+            data-title="Book Reading List Application"
+            data-tech="html css javascript book reading list web application"
+          >
+            <div class="card-header">
+              <i class="fas fa-book card-icon"></i>
+              <h3>Book Reading List Application</h3>
+            </div>
+            <p>
+              A reading list web application developed in Lecture 11 that
+              allows users to add, track, and manage their book collection.
+              Features include add/remove books, reading status tracking, and
+              persistent storage. Repository README includes the deployed link.
+            </p>
+            <div class="card-tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+            </div>
+            <div class="card-links">
+              <a
+                href="https://github.com/kush-aman/reading-app1"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-sm"
+                ><i class="fab fa-github"></i> GitHub Repo</a
+              >
+              <a
+                href="https://reading-app1.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-sm btn-live"
+                ><i class="fas fa-external-link-alt"></i> Live Demo</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <p id="noResults" class="no-results" style="display: none">
+          No projects found matching your search. Try a different keyword.
         </p>
-      
-        <div
-          id="chatMessages"
-          aria-live="polite"
-        ></div>
-      
+      </section>
+
+      <!-- ========== CONTACT ========== -->
+      <section class="contact" id="contact" aria-labelledby="contact-heading">
+        <h2 id="contact-heading">
+          <i class="fas fa-envelope"></i> Contact Information
+        </h2>
+        <div class="contact-grid">
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <strong>Email</strong>
+              <p>
+                <a href="mailto:aman.25bcon1981@jecrcu.edu.in"
+                  >aman.25bcon1981@jecrcu.edu.in</a
+                >
+              </p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fab fa-github"></i>
+            <div>
+              <strong>GitHub</strong>
+              <p>
+                <a
+                  href="https://github.com/kush-aman"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >github.com/kush-aman</a
+                >
+              </p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-graduation-cap"></i>
+            <div>
+              <strong>Education</strong>
+              <p>B.Tech CSE, JEC, RCU — 2nd Year</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== AI CHATBOT ========== -->
+      <section
+        class="ai-chat"
+        id="chatbot"
+        aria-labelledby="chatbot-heading"
+      >
+        <h2 id="chatbot-heading">
+          <i class="fas fa-robot"></i> Ask My AI Assistant
+        </h2>
+        <p class="chat-description">
+          Ask questions about my portfolio, projects, skills, and technologies.
+        </p>
+
+        <div id="chatMessages" aria-live="polite"></div>
+
         <div class="chat-controls">
           <input
             type="text"
             id="userInput"
-            placeholder="Ask a question..."
+            placeholder="Ask a question... (e.g. What are your skills?)"
           />
-      
           <button id="sendButton" type="button">
-            Send
+            <i class="fas fa-paper-plane"></i> Send
           </button>
         </div>
-      
+
         <p id="chatStatus" role="status"></p>
-      
         <p class="chat-note">
-          AI chat is available during the local
-          classroom demonstration only.
+          Powered by AI — ask about my projects, skills, or background.
         </p>
       </section>
-  </section>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
     <footer class="site-footer">
-      <button id = "themeToggle">Change Theme</button>
-      <p>Email - aman.25bcon1981@jecrcu.edu.in</p>
+      <p>
+        &copy; 2026 Aman Kushwaha. Built with
+        <i class="fas fa-heart" style="color: #e74c3c"></i> using HTML, CSS &amp;
+        JavaScript.
+      </p>
+      <div class="footer-links">
+        <a
+          href="https://github.com/kush-aman"
+          target="_blank"
+          rel="noopener noreferrer"
+          ><i class="fab fa-github"></i
+        ></a>
+        <a href="mailto:aman.25bcon1981@jecrcu.edu.in"
+          ><i class="fas fa-envelope"></i
+        ></a>
+      </div>
     </footer>
-    <script src = "script.js"></script>
+
+    <script src="script.js"></script>
     <script src="config.js"></script>
     <script src="chatbot.js"></script>
   </body>
